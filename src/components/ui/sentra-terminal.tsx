@@ -3,14 +3,14 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function SentraTerminal() {
   const [lines, setLines] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
 
-  const terminalLines = [
+  const terminalLines = useMemo(() => [
     "$ doctorcodex@sentra:~$ npm init -y",
     "✓ Package initialized",
     "$ doctorcodex@sentra:~$ npm install next@latest react@latest",
@@ -24,7 +24,7 @@ export default function SentraTerminal() {
     "✓ AI-powered clinical intelligence activated",
     "🚀 AADI Clinical Platform ready at https://sentra-aadi.com",
     "💡 Enhanced by doctorcodex + Dex AI collaboration",
-  ];
+  ], []);
 
   useEffect(() => {
     if (currentLine >= terminalLines.length) return;

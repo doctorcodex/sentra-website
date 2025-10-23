@@ -12,6 +12,17 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>('system');
   const [mounted, setMounted] = useState(false);
 
+  const applyTheme = useCallback((themeToApply: string) => {
+    const root = document.documentElement;
+
+    if (themeToApply === 'system') {
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.classList.toggle('theme-dark', systemDark);
+    } else {
+      root.classList.toggle('theme-dark', themeToApply === 'dark');
+    }
+  }, []);
+
   // Initialize theme from localStorage and system preference
   useEffect(() => {
     setMounted(true);
@@ -36,18 +47,7 @@ export default function ThemeToggle() {
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
-
-  const applyTheme = useCallback((themeToApply: string) => {
-    const root = document.documentElement;
-
-    if (themeToApply === 'system') {
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      root.classList.toggle('theme-dark', systemDark);
-    } else {
-      root.classList.toggle('theme-dark', themeToApply === 'dark');
-    }
-  }, []);
+  }, [theme, applyTheme]);
 
   const toggleTheme = useCallback(() => {
     const newTheme: Theme = theme === 'light' ? 'dark' : 'light';

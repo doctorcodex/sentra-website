@@ -67,7 +67,6 @@ export default function TeamAvatars() {
               overlap={-24}
               ringColor="ring-white"
               hoverScale={1.1}
-              tooltipBg="bg-yellow-400 text-black"
             />
           </div>
 
@@ -80,7 +79,6 @@ export default function TeamAvatars() {
               overlap={-24}
               ringColor="ring-white"
               hoverScale={1.1}
-              tooltipBg="bg-yellow-400 text-black"
             />
           </div>
         </div>

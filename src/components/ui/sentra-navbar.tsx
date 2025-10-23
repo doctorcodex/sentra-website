@@ -107,12 +107,9 @@ const SentraNavbar = React.forwardRef<HTMLElement, Navbar03Props>(
     {
       className,
       logo = <Logo />,
-      logoHref: _logoHref = '#',
       navigationLinks = defaultNavigationLinks,
       signInText = 'Sign In',
-      signInHref: _signInHref = '#signin',
       ctaText = 'Get Started',
-      ctaHref: _ctaHref = '#get-started',
       onSignInClick,
       onCtaClick,
       ...props

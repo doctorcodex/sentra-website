@@ -31,33 +31,40 @@ export function generateClinicalSummary(input: SummaryInput): string {
 
 // Lightweight test harness (renders small badge + logs details)
 function DevDiagnostics() {
-  const tests: { name: string; pass: boolean; details?: string }[] = [];
+  const tests = useMemo(() => {
+    const testResults: { name: string; pass: boolean; details?: string }[] = [];
 
-  // Test 1: empty input -> empty string
-  const t1 = generateClinicalSummary({ checks: [] }) === "";
-  tests.push({ name: "Empty -> empty string", pass: t1 });
+    // Test 1: empty input -> empty string
+    const t1 = generateClinicalSummary({ checks: [] }) === "";
+    testResults.push({ name: "Empty -> empty string", pass: t1 });
 
-  // Test 2: checks only
-  const t2out = generateClinicalSummary({ checks: ["Febris", "Fatigue"] });
-  tests.push({ name: "Checks only contains 'Gejala'", pass: /Gejala: Febris, Fatigue\./.test(t2out), details: t2out });
+    // Test 2: checks only
+    const t2out = generateClinicalSummary({ checks: ["Febris", "Fatigue"] });
+    testResults.push({ name: "Checks only contains 'Gejala'", pass: /Gejala: Febris, Fatigue\./.test(t2out), details: t2out });
 
-  // Test 3: full input ordering
-  const t3out = generateClinicalSummary({
-    checks: ["Febris"],
-    status: "Stabil",
-    plan: "Kontrol 1 minggu",
-    free: "Note bebas",
-    diff: "DBD; Influenza",
-    main: "URTI",
-  });
-  const t3pass = /Gejala: Febris\./.test(t3out) && /Status: Stabil/.test(t3out) && /Rencana: Kontrol 1 minggu/.test(t3out) && /Note bebas/.test(t3out) && /Diagnosis Banding: DBD; Influenza/.test(t3out) && /Diagnosis Utama: URTI/.test(t3out);
-  tests.push({ name: "Full summary composition", pass: t3pass, details: t3out });
+    // Test 3: full input ordering
+    const t3out = generateClinicalSummary({
+      checks: ["Febris"],
+      status: "Stabil",
+      plan: "Kontrol 1 minggu",
+      free: "Note bebas",
+      diff: "DBD; Influenza",
+      main: "URTI",
+    });
+    const t3pass = /Gejala: Febris\./.test(t3out) && /Status: Stabil/.test(t3out) && /Rencana: Kontrol 1 minggu/.test(t3out) && /Note bebas/.test(t3out) && /Diagnosis Banding: DBD; Influenza/.test(t3out) && /Diagnosis Utama: URTI/.test(t3out);
+    testResults.push({ name: "Full summary composition", pass: t3pass, details: t3out });
+
+    return testResults;
+  }, []);
 
   useEffect(() => {
     // Log test details in dev
     if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
+      // eslint-disable-next-line no-console
       console.groupCollapsed("[DevDiagnostics] Summary tests");
+      // eslint-disable-next-line no-console
       tests.forEach((t) => console.warn(`${t.pass ? "✅" : "❌"} ${t.name}`, t.details ? `\n→ ${t.details}` : ""));
+      // eslint-disable-next-line no-console
       console.groupEnd();
     }
   }, [tests]);
@@ -80,7 +87,10 @@ function DevDiagnostics() {
 }
 
 export default function SentraAadiDemo() {
-  console.log("SentraAadiDemo rendering...");
+  if (process.env.NODE_ENV === "development") {
+    // eslint-disable-next-line no-console
+    console.warn("SentraAadiDemo rendering...");
+  }
   const [activeSystem, setActiveSystem] = useState("Sistemik");
   const [devOpen, setDevOpen] = useState({
     status: false,
@@ -139,10 +149,11 @@ export default function SentraAadiDemo() {
     const value = notes[k] || "";
     const [flash, setFlash] = useState(false);
     const [visible, setVisible] = useState(false);
+    const isOpen = devOpen[k];
 
     useEffect(() => {
-      if (devOpen[k]) setVisible(true);
-    }, [devOpen[k], k]);
+      if (isOpen) setVisible(true);
+    }, [isOpen]);
 
     useEffect(() => {
       if (value && animationEnabled) {
@@ -150,6 +161,7 @@ export default function SentraAadiDemo() {
         const t = setTimeout(() => setFlash(false), 700);
         return () => clearTimeout(t);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [value]);
 
     return (
@@ -190,7 +202,7 @@ export default function SentraAadiDemo() {
     );
   };
 
-  const Tab = ({ label, active, onClick, tabRef }: { label: string; active: boolean; onClick: () => void; tabRef?: (el: HTMLButtonElement | null) => void; }) => (
+  const Tab = ({ label, active, onClick, tabRef }: { label: string; active: boolean; onClick: () => void; tabRef?: (_el: HTMLButtonElement | null) => void; }) => (
     <button
       ref={tabRef}
       onClick={onClick}

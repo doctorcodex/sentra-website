@@ -6,9 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  experimental: {
-    typedRoutes: true,
-  },
+  typedRoutes: true,
   images: {
     remotePatterns: [
       {
@@ -21,4 +19,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-

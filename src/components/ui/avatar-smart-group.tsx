@@ -26,7 +26,6 @@ interface AvatarSmartGroupProps {
   overlap?: number; // negative for overlap
   ringColor?: string; // ring color class
   hoverScale?: number;
-  tooltipBg?: string;
 }
 
 export function AvatarSmartGroup({
@@ -37,7 +36,6 @@ export function AvatarSmartGroup({
   overlap = -10,
   ringColor = "ring-background",
   hoverScale = 1.1,
-  tooltipBg = "bg-popover",
 }: AvatarSmartGroupProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const centerIndex = Math.floor(users.length / 2);

@@ -122,7 +122,6 @@ export default function SentraAbout() {
                           overlap={-30}
                           ringColor="ring-white"
                           hoverScale={1.1}
-                          tooltipBg="bg-yellow-400 text-black"
                         />
                       </motion.div>
 
