@@ -2,6 +2,8 @@
 
 <div align="center">
 
+**Architected by doctorcodex**
+
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.6-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
@@ -62,6 +64,7 @@ npm start
 - **Styling:** Tailwind CSS 3.x + Sentra/UI custom tokens
 - **Icons:** Lucide React (16px default, following text color)
 
+<<<<<<< HEAD
 ### UI Components
 - **Primitives:** Radix UI (Accordion, Avatar, Navigation, Tooltip)
 - **Animation:** Framer Motion
@@ -398,3 +401,9 @@ We extend our sincere appreciation to the creators and contributors of the open-
 Made with ❤️ using **Sentra/UI v2.0**
 
 </div>
+=======
+## agents
+- codex uix - UI/UX refinement specialist
+- codex guard - background quality & a11y
+- Sentra Engineer - assistant implementation
+>>>>>>> 8cc378e (Update readme.md)
