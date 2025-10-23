@@ -1,7 +1,8 @@
 // Developed by doctorcodex
-// Modern navbar component with mobile menu and responsive design
+// Modern navbar component with mobile menu, responsive design, and dark mode toggle
 
 'use client';
+import ThemeToggle from '@/components/theme_toggle';
 import { Button } from '@/components/ui/button';
 import {
     NavigationMenu,
@@ -231,6 +232,7 @@ const SentraNavbar = React.forwardRef<HTMLElement, Navbar03Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
