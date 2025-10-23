@@ -1,0 +1,50 @@
+{
+  // Architected by doctorcodex/ drferdiiskandar
+  // Developed by doctorcodex/ drferdiiskandar
+  "todo-comment": {
+    "prefix": "todo",
+    "body": ["// TODO: ${1:what} — owner: ${2:name} — ${CURRENT_DATE}"]
+  },
+  "test-block": {
+    "prefix": "tb",
+    "body": [
+      "describe('${1:unit}', () => {",
+      "  it('should ${2:behavior}', () => {",
+      "    ${3:// arrange-act-assert}",
+      "  });",
+      "});"
+    ]
+  },
+  "teks-favorit": {
+    "prefix": "teksfavorit",
+    "body": [
+      ".teks-favorit {",
+      "  background: linear-gradient(",
+      "    90deg,",
+      "    #ff0000,",
+      "    #ff7f00,",
+      "    #ff69b4,",
+      "    #ffff00,",
+      "    #00ff1a",
+      "  );",
+      "  background-size: 200% 100%;",
+      "  -webkit-background-clip: text;",
+      "  color: transparent;",
+      "  animation: geser-warna 3s linear infinite;",
+      "  text-shadow:",
+      "    0 0 4px rgba(0, 255, 26, 0.4),",
+      "    0 0 12px rgba(0, 255, 26, 0.3);",
+      "}",
+      "",
+      "@keyframes geser-warna {",
+      "  0% {",
+      "    background-position: 0% 50%;",
+      "  }",
+      "  100% {",
+      "    background-position: 200% 50%;",
+      "  }",
+      "}"
+    ],
+    "description": "Gradient text with neon green emphasis and animation."
+  }
+}

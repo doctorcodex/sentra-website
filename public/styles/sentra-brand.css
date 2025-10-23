@@ -1,0 +1,240 @@
+/* Developed by doctorcodex — sentra/ui brand tokens as CSS variables */
+
+:root {
+  /* brand */
+  --brand-oxford: #002157;
+  --brand-red: #F71D25;
+  --brand-yellow: #FEE505;
+  --brand-blue: #0085FF;
+
+  /* roles */
+  --bg: #ffffff;
+  --bg-alt: #f7f8fb;
+  --fg: #000000;
+  --muted: rgba(0, 33, 87, 0.60);
+  --border: rgba(0, 33, 87, 0.12);
+  --accent: var(--brand-red);
+  --accent-alt: var(--brand-blue);
+  --warning: var(--brand-yellow);
+
+  /* typography */
+  --font-body: Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Jakarta Sans", Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --fs-12: 14px; --lh-12: 18px; /* meta/small */
+  --fs-14: 14px; --lh-14: 20px;
+  --fs-15: 16px; --lh-15: 21px; /* body */
+  --fs-20: 20px; --lh-20: 28px; /* h2 */
+  --fs-36: 36px; --lh-36: 42px; /* h1 */
+
+  /* spacing (dense) */
+  --space-1: 4px;  /* extra-compact */
+  --space-2: 6px;
+  --space-3: 10px;
+  --space-4: 14px;
+  --space-5: 18px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+
+  /* controls */
+  --control-h-sm: 26px;
+  --control-h-md: 32px;
+  --control-pad-x: 8px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* shadows & easing */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* shadcn-compatible HSL color vars */
+  --background: 0 0% 100%;
+  --foreground: 214 100% 17%;
+  --primary: 357 92% 54%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 207 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted-hsl: 220 40% 97%;
+  --muted-foreground: 214 40% 40%;
+  --border-hsl: 214 20% 85%;
+  --ring: 357 92% 54%;
+}
+
+/* dark mode overrides */
+.theme-dark {
+  --bg: #07090f;
+  --bg-alt: #0c1220;
+  --fg: #e8eefc;
+  --muted: rgba(232, 238, 252, 0.66);
+  --border: rgba(232, 238, 252, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.40), 0 20px 60px rgba(0,0,0,0.45);
+
+  /* dark shadcn hsl vars */
+  --background: 221 28% 5%;
+  --foreground: 224 68% 94%;
+  --primary: 357 92% 54%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 207 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted-hsl: 222 33% 12%;
+  --muted-foreground: 224 50% 75%;
+  --border-hsl: 224 30% 40%;
+  --ring: 357 92% 54%;
+}
+
+.theme-dark body {
+  color: #e8eefc;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3 {
+  color: #e8eefc;
+}
+
+.theme-dark p {
+  color: #e8eefc;
+  font-size: 15px;
+}
+
+/* base */
+html, body {
+  background: var(--bg);
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: var(--fs-15);
+  line-height: var(--lh-15);
+}
+
+h1 { font-size: var(--fs-36); line-height: var(--lh-36); font-weight: 600; font-family: var(--font-heading); color: #002147; }
+h2 { font-size: var(--fs-20); line-height: var(--lh-20); font-weight: 600; font-family: var(--font-heading); color: #002147; }
+h3 { font-size: var(--fs-15); line-height: var(--lh-15); font-weight: 600; font-family: var(--font-heading); color: #002147; }
+p { color: #6B7280; font-size: 15px; } /* Gray-500 elegant, 15px standard */
+small, .meta { font-size: var(--fs-12); line-height: var(--lh-12); letter-spacing: 0.02em; text-transform: uppercase; }
+
+/* controls */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--control-h-md);
+  padding: 3px var(--control-pad-x);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s var(--easing-standard), box-shadow .2s var(--easing-standard), background-color .2s;
+}
+.btn:hover { transform: translateY(-1px); background: var(--bg-alt); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn--primary { background: var(--accent); color: #fff; border-color: transparent; }
+.btn--ghost { background: transparent; border-color: transparent; }
+.btn[disabled], .btn--disabled { opacity: .5; pointer-events: none; }
+
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  font-size: var(--fs-12); line-height: var(--lh-12);
+}
+.tag .dot { width: 6px; height: 6px; border-radius: 999px; background: currentcolor; }
+.tag--error { color: var(--accent); }
+.tag--info { color: var(--accent-alt); }
+.tag--warn { color: var(--warning); }
+
+/* inputs */
+.input, input[type="text"], select {
+  height: var(--control-h-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--control-pad-x);
+  background: var(--bg);
+  color: var(--fg);
+}
+.input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+.select { padding-right: calc(var(--control-pad-x) + 16px); }
+
+/* layout helpers */
+.container { width: min(1100px, 100%); margin-inline: auto; padding-inline: var(--space-4); }
+.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-3); }
+table.sticky thead th { position: sticky; top: 0; background: var(--bg); }
+
+/* landing template helpers */
+.topbar { height: 56px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.topbar .brand { font-weight: 600; letter-spacing: -0.01em; }
+.topbar nav a { color: var(--muted); text-decoration: none; }
+.topbar nav a:hover { color: var(--fg); }
+
+.footer { border-top: 1px solid var(--border); padding-block: var(--space-6); background: var(--bg); color: var(--muted); }
+
+.section { padding-block: var(--space-7); }
+.section--hero { padding-block: var(--space-8); background: var(--bg); }
+.section--alt { background: var(--bg-alt); }
+
+.lead { font-size: var(--fs-20); line-height: var(--lh-20); color: #000000; }
+.theme-dark .lead { color: #e8eefc; }
+
+/* h2 underline 48px per spec */
+.h2-underline { position: relative; display: inline-block; }
+.h2-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.feature-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: var(--space-4); }
+@media (min-width: 768px) { .feature-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+.card--elevated { box-shadow: var(--shadow-md); }
+.card__body { padding: var(--space-5); }
+
+.quote { font-size: var(--fs-20); line-height: var(--lh-20); color: var(--muted); }
+.quote p { quotes: "\201C" "\201D"; }
+.quote p::before { content: open-quote; color: var(--accent); margin-right: 4px; }
+.quote p::after { content: close-quote; color: var(--accent); margin-left: 2px; }
+
+.cta { display: flex; gap: var(--space-3); align-items: center; }
+.cta .btn--primary { background: var(--accent); color: #fff; border-color: transparent; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+
+/* shining text */
+/* visible fallback + enhanced gradient when supported */
+.shining-text {
+  display: inline-block;
+  color: var(--fg);
+}
+@supports (background-clip: text) {
+  .shining-text {
+    background: linear-gradient(90deg, rgba(255,255,255,0.15), var(--accent-alt), var(--fg), rgba(255,255,255,0.15));
+    background-size: 200% 100%;
+    background-clip: text;
+    color: transparent;
+    animation: sentra-shine 2.8s linear infinite;
+  }
+}
+@keyframes sentra-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* sentra text helpers */
+.sentra-text { color: var(--fg); }
+.sentra-demo { color: var(--fg); font-size: var(--fs-15); line-height: var(--lh-15); }
+

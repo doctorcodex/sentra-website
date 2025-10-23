@@ -1,0 +1,118 @@
+{
+  "name": "sentra/ui",
+  "version": "1.0.0",
+  "brand": {
+    "tone": [
+      "teknis",
+      "modern",
+      "rapi",
+      "compact",
+      "presisi"
+    ],
+    "icon_source": "lucide (shadcn)",
+    "density": "dense",
+    "dark_mode": {
+      "class": "theme-dark",
+      "strategy": "class-toggle"
+    }
+  },
+  "design_principles": [
+    "Padat tapi terbaca (compact by default)",
+    "Aksen hemat, netral dominan",
+    "Grid modular 12 kolom",
+    "Hover subtle, focus selalu terlihat"
+  ],
+  "typography": {
+    "font_family": "Inter",
+    "scale": {
+      "h1": "36/42",
+      "h2": "20/28 (underline 48px)",
+      "body": "14/20",
+      "meta": "12/18"
+    }
+  },
+  "colors": {
+    "brand": {
+      "oxford": "#002157",
+      "red": "#F71D25",
+      "yellow": "#FEE505",
+      "blue": "#0085FF"
+    },
+    "roles": {
+      "bg": "#ffffff",
+      "bg_alt": "#f7f8fb",
+      "fg": "#002157",
+      "muted": "rgba(0,33,87,0.60)",
+      "border": "rgba(0,33,87,0.12)",
+      "accent": "#F71D25",
+      "accent_alt": "#0085FF",
+      "warning": "#FEE505"
+    }
+  },
+  "spacing": {
+    "2": "6px",
+    "3": "10px",
+    "4": "14px",
+    "5": "18px",
+    "6": "24px",
+    "7": "32px",
+    "8": "40px"
+  },
+  "controls": {
+    "height_md": "32px",
+    "pad_x": "8px",
+    "radius_sm": "6px"
+  },
+  "components": {
+    "button": {
+      "variants": [
+        "default",
+        "primary",
+        "link",
+        "outline",
+        "ghost",
+        "disabled"
+      ],
+      "padding": "3px var(--control-pad-x)",
+      "radius": "6px",
+      "hover": "bg -> bg-alt, translateY(-1px)",
+      "focus": "outline 2px accent"
+    },
+    "tag": {
+      "shape": "chip kecil, radius 6px",
+      "padding": "2px 6-8px",
+      "dot": "6px di kiri (red/yellow/blue)"
+    },
+    "input": {
+      "height": "32px",
+      "radius": "6px",
+      "placeholder": "muted 70%"
+    },
+    "select": {
+      "height": "32px",
+      "caret": "custom svg right 6px"
+    },
+    "switch": {
+      "size": "22x40",
+      "active_bg": "accent 12% mix"
+    }
+  },
+  "layout": {
+    "topbar_h": "56px",
+    "sidebar_w": "200px (collapse ≤960px)",
+    "table": {
+      "sticky_header": true,
+      "cell_pad": "8x6px"
+    }
+  },
+  "do": [
+    "Gunakan spacing skala dense",
+    "Jaga kontras dan focus-visible",
+    "Pakai ikon Lucide 16px mengikuti warna teks"
+  ],
+  "dont": [
+    "Padding tombol berlebihan",
+    "Shadow berat",
+    "Aksen warna kebanyakan"
+  ]
+}

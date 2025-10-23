@@ -1,0 +1,69 @@
+# gitignore — Developed by doctorcodex / drferdiiskandar
+
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+.npm/
+.pnpm-debug.log*
+
+# testing
+coverage/
+*.lcov
+.nyc_output/
+
+# production
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+
+# environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.iml
+*.sublime-*
+
+# temporary
+tmp/
+temp/
+*.tmp
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+
+# misc
+.turbo/
+.vercel/
+.output/

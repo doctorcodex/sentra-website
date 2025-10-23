@@ -1,0 +1,68 @@
+// Architected by doctorcodex/ drferdiiskandar
+// Developed by doctorcodex/ drferdiiskandar
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "json"],
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.semi": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "workbench.colorTheme": "The Best Theme",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["comment"],
+        "settings": {
+          "foreground": "#ff0000"
+        }
+      },
+      {
+        "scope": ["keyword", "storage.type"],
+        "settings": {
+          "foreground": "#ff7f00"
+        }
+      },
+      {
+        "scope": ["string", "constant.character"],
+        "settings": {
+          "foreground": "#ff69b4"
+        }
+      },
+      {
+        "scope": ["variable", "entity.name.function"],
+        "settings": {
+          "foreground": "#ffff00"
+        }
+      },
+      {
+        "scope": ["entity.name.type", "support.class", "support.function"],
+        "settings": {
+          "foreground": "#00ff1a"
+        }
+      }
+    ]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "version": "1.0",
+  "metadata": {
+    "name": "sentra/ui tokens",
+    "mode": "compact-dense"
+  },
+  "tokens": {
+    "color": {
+      "brand": {
+        "oxford": {
+          "value": "#002157"
+        },
+        "red": {
+          "value": "#F71D25"
+        },
+        "yellow": {
+          "value": "#FEE505"
+        },
+        "blue": {
+          "value": "#0085FF"
+        }
+      },
+      "surface": {
+        "bg": {
+          "value": "#ffffff"
+        },
+        "bgAlt": {
+          "value": "#f7f8fb"
+        },
+        "fg": {
+          "value": "{color.brand.oxford}"
+        },
+        "muted": {
+          "value": "rgba(0,33,87,0.60)"
+        },
+        "border": {
+          "value": "rgba(0,33,87,0.12)"
+        }
+      },
+      "semantic": {
+        "accent": {
+          "value": "{color.brand.red}"
+        },
+        "accentAlt": {
+          "value": "{color.brand.blue}"
+        },
+        "warning": {
+          "value": "{color.brand.yellow}"
+        }
+      }
+    },
+    "radius": {
+      "xs": {
+        "value": "4px"
+      },
+      "sm": {
+        "value": "6px"
+      },
+      "md": {
+        "value": "10px"
+      }
+    },
+    "shadow": {
+      "sm": {
+        "value": "0 1px 2px rgba(0,0,0,0.06)"
+      },
+      "md": {
+        "value": "0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06)"
+      }
+    },
+    "font": {
+      "family": {
+        "value": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+      },
+      "size": {
+        "meta": {
+          "value": "14px"
+        },
+        "body": {
+          "value": "16px"
+        },
+        "h2": {
+          "value": "20px"
+        },
+        "h1": {
+          "value": "36px"
+        }
+      },
+      "lineHeight": {
+        "meta": {
+          "value": "18px"
+        },
+        "body": {
+          "value": "21px"
+        },
+        "h2": {
+          "value": "28px"
+        },
+        "h1": {
+          "value": "42px"
+        }
+      }
+    },
+    "space": {
+      "1": {
+        "value": "4px"
+      },
+      "2": {
+        "value": "6px"
+      },
+      "3": {
+        "value": "10px"
+      },
+      "4": {
+        "value": "14px"
+      },
+      "5": {
+        "value": "18px"
+      },
+      "6": {
+        "value": "24px"
+      },
+      "7": {
+        "value": "32px"
+      },
+      "8": {
+        "value": "40px"
+      }
+    },
+    "control": {
+      "height": {
+        "sm": {
+          "value": "26px"
+        },
+        "md": {
+          "value": "32px"
+        }
+      },
+      "padX": {
+        "value": "8px"
+      }
+    },
+    "easing": {
+      "standard": {
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    }
+  },
+  "modes": {
+    "dark": {
+      "color": {
+        "surface": {
+          "bg": {
+            "value": "#07090f"
+          },
+          "bgAlt": {
+            "value": "#0c1220"
+          },
+          "fg": {
+            "value": "#e8eefc"
+          },
+          "muted": {
+            "value": "rgba(232,238,252,0.66)"
+          },
+          "border": {
+            "value": "rgba(232,238,252,0.12)"
+          }
+        }
+      },
+      "shadow": {
+        "sm": {
+          "value": "0 1px 2px rgba(0,0,0,0.40)"
+        },
+        "md": {
+          "value": "0 1px 2px rgba(0,0,0,0.40), 0 20px 60px rgba(0,0,0,0.45)"
+        }
+      }
+    }
+  }
+}

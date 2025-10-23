@@ -1,0 +1,18 @@
+// Architected by doctorcodex/ drferdiiskandar
+// Developed by doctorcodex/ drferdiiskandar
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "npm run lint",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "format",
+      "type": "shell",
+      "command": "npm run format"
+    }
+  ]
+}

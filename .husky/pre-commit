@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-commit hooks (lint-staged)"
+npx --no-install lint-staged
+
+echo "Running Codex Guard: tokens check and stylelint"
+npm run --silent guard:tokens:check || exit 1
+npm run --silent stylelint || exit 1
+
+

@@ -1,0 +1,12 @@
+// Architected by doctorcodex/ drferdiiskandar
+// Developed by doctorcodex/ drferdiiskandar
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "vivaxy.vscode-conventional-commits",
+    "deque-systems.vscode-axe-linter"
+  ]
+}
