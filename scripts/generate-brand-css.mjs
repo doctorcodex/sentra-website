@@ -35,19 +35,26 @@ function toCssVars(tokens) {
   if (surface.border?.value) lines.push(`  --border: ${surface.border.value};`);
 
   const semantic = tokens.tokens?.color?.semantic ?? {};
-  if (semantic.accent?.value) lines.push(`  --accent: ${resolveRef(semantic.accent.value, tokens)};`);
-  if (semantic.accentAlt?.value) lines.push(`  --accent-alt: ${resolveRef(semantic.accentAlt.value, tokens)};`);
-  if (semantic.warning?.value) lines.push(`  --warning: ${resolveRef(semantic.warning.value, tokens)};`);
+  if (semantic.accent?.value)
+    lines.push(`  --accent: ${resolveRef(semantic.accent.value, tokens)};`);
+  if (semantic.accentAlt?.value)
+    lines.push(`  --accent-alt: ${resolveRef(semantic.accentAlt.value, tokens)};`);
+  if (semantic.warning?.value)
+    lines.push(`  --warning: ${resolveRef(semantic.warning.value, tokens)};`);
 
   // typography
   const font = tokens.tokens?.font ?? {};
   if (font.family?.value) lines.push(`  --font-family: ${font.family.value}, sans-serif;`);
   const size = font.size ?? {};
   const lh = tokens.tokens?.font?.lineHeight ?? {};
-  if (size.meta?.value && lh.meta?.value) lines.push(`  --fs-12: ${size.meta.value}; --lh-12: ${lh.meta.value};`);
-  if (size.body?.value && lh.body?.value) lines.push(`  --fs-14: ${size.body.value}; --lh-14: ${lh.body.value};`);
-  if (size.h2?.value && lh.h2?.value) lines.push(`  --fs-20: ${size.h2.value}; --lh-20: ${lh.h2.value};`);
-  if (size.h1?.value && lh.h1?.value) lines.push(`  --fs-36: ${size.h1.value}; --lh-36: ${lh.h1.value};`);
+  if (size.meta?.value && lh.meta?.value)
+    lines.push(`  --fs-12: ${size.meta.value}; --lh-12: ${lh.meta.value};`);
+  if (size.body?.value && lh.body?.value)
+    lines.push(`  --fs-14: ${size.body.value}; --lh-14: ${lh.body.value};`);
+  if (size.h2?.value && lh.h2?.value)
+    lines.push(`  --fs-20: ${size.h2.value}; --lh-20: ${lh.h2.value};`);
+  if (size.h1?.value && lh.h1?.value)
+    lines.push(`  --fs-36: ${size.h1.value}; --lh-36: ${lh.h1.value};`);
 
   // spacing
   const space = tokens.tokens?.space ?? {};
@@ -101,7 +108,9 @@ function toCssVars(tokens) {
   lines.push('');
   lines.push('h1 { font-size: var(--fs-36); line-height: var(--lh-36); font-weight: 600; }');
   lines.push('h2 { font-size: var(--fs-20); line-height: var(--lh-20); font-weight: 600; }');
-  lines.push('small, .meta { font-size: var(--fs-12); line-height: var(--lh-12); letter-spacing: 0.02em; text-transform: uppercase; }');
+  lines.push(
+    'small, .meta { font-size: var(--fs-12); line-height: var(--lh-12); letter-spacing: 0.02em; text-transform: uppercase; }',
+  );
   lines.push('');
   lines.push('.btn {');
   lines.push('  display: inline-flex; align-items: center; justify-content: center;');
@@ -109,26 +118,40 @@ function toCssVars(tokens) {
   lines.push('  border-radius: var(--radius-sm); border: 1px solid var(--border);');
   lines.push('  background: var(--bg); color: var(--fg);');
   lines.push('  box-shadow: var(--shadow-sm);');
-  lines.push('  transition: transform .15s var(--easing-standard), box-shadow .2s var(--easing-standard), background-color .2s;');
+  lines.push(
+    '  transition: transform .15s var(--easing-standard), box-shadow .2s var(--easing-standard), background-color .2s;',
+  );
   lines.push('}');
   lines.push('.btn:hover { transform: translateY(-1px); background: var(--bg-alt); }');
   lines.push('.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }');
-  lines.push('.btn--primary { background: var(--accent); color: #fff; border-color: transparent; }');
+  lines.push(
+    '.btn--primary { background: var(--accent); color: #fff; border-color: transparent; }',
+  );
   lines.push('.btn--ghost { background: transparent; border-color: transparent; }');
   lines.push('.btn[disabled], .btn--disabled { opacity: .5; pointer-events: none; }');
   lines.push('');
-  lines.push('.tag { display: inline-flex; align-items: center; gap: 6px; border-radius: var(--radius-sm); padding: 2px 8px; background: var(--bg-alt); border: 1px solid var(--border); font-size: var(--fs-12); line-height: var(--lh-12); }');
-  lines.push('.tag .dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }');
+  lines.push(
+    '.tag { display: inline-flex; align-items: center; gap: 6px; border-radius: var(--radius-sm); padding: 2px 8px; background: var(--bg-alt); border: 1px solid var(--border); font-size: var(--fs-12); line-height: var(--lh-12); }',
+  );
+  lines.push(
+    '.tag .dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }',
+  );
   lines.push('.tag--error { color: var(--accent); }');
   lines.push('.tag--info { color: var(--accent-alt); }');
   lines.push('.tag--warn { color: var(--warning); }');
   lines.push('');
-  lines.push('.input, input[type="text"], select { height: var(--control-h-md); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0 var(--control-pad-x); background: var(--bg); color: var(--fg); }');
+  lines.push(
+    '.input, input[type="text"], select { height: var(--control-h-md); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0 var(--control-pad-x); background: var(--bg); color: var(--fg); }',
+  );
   lines.push('.input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }');
   lines.push('.select { padding-right: calc(var(--control-pad-x) + 16px); }');
   lines.push('');
-  lines.push('.container { width: min(1100px, 100%); margin-inline: auto; padding-inline: var(--space-4); }');
-  lines.push('.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-3); }');
+  lines.push(
+    '.container { width: min(1100px, 100%); margin-inline: auto; padding-inline: var(--space-4); }',
+  );
+  lines.push(
+    '.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-3); }',
+  );
   lines.push('table.sticky thead th { position: sticky; top: 0; background: var(--bg); }');
 
   return lines.join('\n') + '\n';
@@ -171,9 +194,8 @@ function main() {
   console.log(`[guard] Wrote ${OUTPUT_PATH}`);
 }
 
-function normalize(s) { return s.replace(/\r\n/g, '\n').trim(); }
+function normalize(s) {
+  return s.replace(/\r\n/g, '\n').trim();
+}
 
 main();
-
-
-

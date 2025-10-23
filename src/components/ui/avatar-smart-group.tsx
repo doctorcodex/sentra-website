@@ -1,16 +1,11 @@
 // Developed by doctorcodex
 // Avatar Smart Group component from 21st.dev ruixenui
 
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
+import { useState } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 
 interface User {
   name: string;
@@ -20,7 +15,7 @@ interface User {
 
 interface AvatarSmartGroupProps {
   users: User[];
-  variant?: "centered" | "uniform"; // two display modes
+  variant?: 'centered' | 'uniform'; // two display modes
   size?: number; // base size in px
   sizeStep?: number; // size difference for centered variant
   overlap?: number; // negative for overlap
@@ -31,13 +26,13 @@ interface AvatarSmartGroupProps {
 
 export function AvatarSmartGroup({
   users,
-  variant = "uniform",
+  variant = 'uniform',
   size = 56,
   sizeStep = 8,
   overlap = -10,
-  ringColor = "ring-background",
+  ringColor = 'ring-background',
   hoverScale = 1.1,
-  tooltipBg = "bg-popover",
+  tooltipBg = 'bg-popover',
 }: AvatarSmartGroupProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const centerIndex = Math.floor(users.length / 2);
@@ -46,13 +41,8 @@ export function AvatarSmartGroup({
     <TooltipProvider delayDuration={0}>
       <div className="flex items-center justify-center" style={{ gap: `${overlap}px` }}>
         {users.map((user, index) => {
-          const isCenter = variant === "centered" && index === centerIndex;
-          const avatarSize =
-            variant === "centered"
-              ? isCenter
-                ? size + sizeStep
-                : size
-              : size;
+          const isCenter = variant === 'centered' && index === centerIndex;
+          const avatarSize = variant === 'centered' ? (isCenter ? size + sizeStep : size) : size;
 
           return (
             <Tooltip key={index}>
@@ -60,10 +50,7 @@ export function AvatarSmartGroup({
                 <div
                   className={`rounded-full ring-2 ${ringColor} transition-transform duration-200 cursor-pointer`}
                   style={{
-                    transform:
-                      activeIndex === index
-                        ? `scale(${hoverScale})`
-                        : "scale(1)",
+                    transform: activeIndex === index ? `scale(${hoverScale})` : 'scale(1)',
                     zIndex: isCenter ? 10 : 0,
                   }}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -79,9 +66,9 @@ export function AvatarSmartGroup({
                     <AvatarImage src={user.image} alt={user.name} />
                     <AvatarFallback>
                       {user.name
-                        .split(" ")
+                        .split(' ')
                         .map((n) => n[0])
-                        .join("")}
+                        .join('')}
                     </AvatarFallback>
                   </Avatar>
                 </div>

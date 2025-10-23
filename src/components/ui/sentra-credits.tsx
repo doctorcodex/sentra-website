@@ -1,18 +1,13 @@
 // Developed by doctorcodex
 // Credits and acknowledgments section for third-party technologies
 
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 // External links use standard <a> tags for external navigation
 
 interface Technology {
@@ -27,115 +22,110 @@ interface Technology {
 const technologies: Technology[] = [
   // Core Framework
   {
-    name: "Next.js",
-    developer: "Vercel",
-    license: "MIT",
-    website: "https://nextjs.org",
-    category: "Core Framework",
-    description: "React framework dengan App Router, Server Components, dan optimization",
+    name: 'Next.js',
+    developer: 'Vercel',
+    license: 'MIT',
+    website: 'https://nextjs.org',
+    category: 'Core Framework',
+    description: 'React framework dengan App Router, Server Components, dan optimization',
   },
   {
-    name: "React",
-    developer: "Meta (Facebook)",
-    license: "MIT",
-    website: "https://react.dev",
-    category: "Core Framework",
-    description: "UI library untuk building component-based interfaces",
+    name: 'React',
+    developer: 'Meta (Facebook)',
+    license: 'MIT',
+    website: 'https://react.dev',
+    category: 'Core Framework',
+    description: 'UI library untuk building component-based interfaces',
   },
   {
-    name: "TypeScript",
-    developer: "Microsoft",
-    license: "Apache 2.0",
-    website: "https://typescriptlang.org",
-    category: "Core Framework",
-    description: "Type-safe JavaScript dengan strict mode",
+    name: 'TypeScript',
+    developer: 'Microsoft',
+    license: 'Apache 2.0',
+    website: 'https://typescriptlang.org',
+    category: 'Core Framework',
+    description: 'Type-safe JavaScript dengan strict mode',
   },
 
   // UI & Design
   {
-    name: "Tailwind CSS",
-    developer: "Tailwind Labs",
-    license: "MIT",
-    website: "https://tailwindcss.com",
-    category: "UI & Styling",
-    description: "Utility-first CSS framework",
+    name: 'Tailwind CSS',
+    developer: 'Tailwind Labs',
+    license: 'MIT',
+    website: 'https://tailwindcss.com',
+    category: 'UI & Styling',
+    description: 'Utility-first CSS framework',
   },
   {
-    name: "shadcn/ui",
-    developer: "shadcn",
-    license: "MIT",
-    website: "https://ui.shadcn.com",
-    category: "UI & Styling",
-    description: "Re-usable components built with Radix UI primitives",
+    name: 'shadcn/ui',
+    developer: 'shadcn',
+    license: 'MIT',
+    website: 'https://ui.shadcn.com',
+    category: 'UI & Styling',
+    description: 'Re-usable components built with Radix UI primitives',
   },
   {
-    name: "Radix UI",
-    developer: "Radix UI Team",
-    license: "MIT",
-    website: "https://radix-ui.com",
-    category: "UI & Styling",
-    description: "Unstyled, accessible component primitives",
+    name: 'Radix UI',
+    developer: 'Radix UI Team',
+    license: 'MIT',
+    website: 'https://radix-ui.com',
+    category: 'UI & Styling',
+    description: 'Unstyled, accessible component primitives',
   },
   {
-    name: "Framer Motion",
-    developer: "Framer",
-    license: "MIT",
-    website: "https://framer.com/motion",
-    category: "UI & Styling",
-    description: "Production-ready animation library for React",
+    name: 'Framer Motion',
+    developer: 'Framer',
+    license: 'MIT',
+    website: 'https://framer.com/motion',
+    category: 'UI & Styling',
+    description: 'Production-ready animation library for React',
   },
   {
-    name: "Lucide Icons",
-    developer: "Lucide Contributors",
-    license: "ISC",
-    website: "https://lucide.dev",
-    category: "UI & Styling",
-    description: "Beautiful & consistent icon set",
+    name: 'Lucide Icons',
+    developer: 'Lucide Contributors',
+    license: 'ISC',
+    website: 'https://lucide.dev',
+    category: 'UI & Styling',
+    description: 'Beautiful & consistent icon set',
   },
 
   // Development Tools
   {
-    name: "ESLint",
-    developer: "ESLint Team",
-    license: "MIT",
-    website: "https://eslint.org",
-    category: "Development Tools",
-    description: "Pluggable JavaScript linter",
+    name: 'ESLint',
+    developer: 'ESLint Team',
+    license: 'MIT',
+    website: 'https://eslint.org',
+    category: 'Development Tools',
+    description: 'Pluggable JavaScript linter',
   },
   {
-    name: "Prettier",
-    developer: "Prettier Team",
-    license: "MIT",
-    website: "https://prettier.io",
-    category: "Development Tools",
-    description: "Opinionated code formatter",
+    name: 'Prettier',
+    developer: 'Prettier Team',
+    license: 'MIT',
+    website: 'https://prettier.io',
+    category: 'Development Tools',
+    description: 'Opinionated code formatter',
   },
   {
-    name: "Husky",
-    developer: "Typicode",
-    license: "MIT",
-    website: "https://typicode.github.io/husky",
-    category: "Development Tools",
-    description: "Modern native git hooks",
+    name: 'Husky',
+    developer: 'Typicode',
+    license: 'MIT',
+    website: 'https://typicode.github.io/husky',
+    category: 'Development Tools',
+    description: 'Modern native git hooks',
   },
 
   // Healthcare
   {
-    name: "FHIR Kit Client",
-    developer: "Vermonster",
-    license: "MIT",
-    website: "https://github.com/Vermonster/fhir-kit-client",
-    category: "Healthcare",
-    description: "HL7 FHIR R4 client for healthcare interoperability",
+    name: 'FHIR Kit Client',
+    developer: 'Vermonster',
+    license: 'MIT',
+    website: 'https://github.com/Vermonster/fhir-kit-client',
+    category: 'Healthcare',
+    description: 'HL7 FHIR R4 client for healthcare interoperability',
   },
 ];
 
-const categories = [
-  "Core Framework",
-  "UI & Styling",
-  "Development Tools",
-  "Healthcare",
-];
+const categories = ['Core Framework', 'UI & Styling', 'Development Tools', 'Healthcare'];
 
 export default function SentraCredits() {
   return (
@@ -147,11 +137,16 @@ export default function SentraCredits() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="h-px bg-gray-300 max-w-2xl mx-auto mb-6"></div>
-          <h2 className="text-2xl md:text-3xl font-semibold h2-underline mb-2" style={{ color: '#002157' }}>
+          <h2
+            className="text-2xl md:text-3xl font-semibold h2-underline mb-2"
+            style={{ color: '#002157' }}
+          >
             Credits & Acknowledgments
           </h2>
           <p className="mt-4 text-[17px] leading-[1.8] font-medium text-gray-600 max-w-3xl mx-auto">
-            Sentra AADI Framework dibangun di atas fondasi teknologi open-source terbaik. Kami mengucapkan terima kasih kepada seluruh komunitas dan developer yang telah berkontribusi membangun tools dan libraries berkualitas tinggi.
+            Sentra AADI Framework dibangun di atas fondasi teknologi open-source terbaik. Kami
+            mengucapkan terima kasih kepada seluruh komunitas dan developer yang telah berkontribusi
+            membangun tools dan libraries berkualitas tinggi.
           </p>
         </div>
 
@@ -169,7 +164,10 @@ export default function SentraCredits() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-lg font-semibold mb-6" style={{ color: '#002157', fontFamily: 'var(--font-heading)' }}>
+                <h3
+                  className="text-lg font-semibold mb-6"
+                  style={{ color: '#002157', fontFamily: 'var(--font-heading)' }}
+                >
                   {category}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -180,7 +178,10 @@ export default function SentraCredits() {
                     >
                       <CardContent className="p-5">
                         <div className="flex items-start justify-between mb-2">
-                          <h4 className="font-semibold text-sm" style={{ color: '#002147', fontFamily: 'var(--font-heading)' }}>
+                          <h4
+                            className="font-semibold text-sm"
+                            style={{ color: '#002147', fontFamily: 'var(--font-heading)' }}
+                          >
                             {tech.name}
                           </h4>
                           <a
@@ -223,7 +224,8 @@ export default function SentraCredits() {
         >
           <div className="max-w-4xl mx-auto p-8 bg-white rounded-xl border border-gray-200 shadow-sm">
             <p className="text-[17px] leading-[1.8] font-medium text-gray-600">
-              We extend our sincere appreciation to the creators and contributors of the open-source technologies that power this system.
+              We extend our sincere appreciation to the creators and contributors of the open-source
+              technologies that power this system.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Badge className="bg-blue-100 text-blue-800 border-blue-200">
@@ -242,7 +244,7 @@ export default function SentraCredits() {
         {/* Attribution Footer */}
         <div className="mt-12 text-center">
           <p className="text-[14px] leading-[1.8] font-medium text-gray-600">
-            Architecture & Development by{" "}
+            Architecture & Development by{' '}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -270,11 +272,11 @@ export default function SentraCredits() {
             </TooltipProvider>
           </p>
           <p className="text-[12px] leading-[1.8] text-gray-500 mt-2">
-            All third-party technologies are property of their respective owners. Used under their respective open-source licenses.
+            All third-party technologies are property of their respective owners. Used under their
+            respective open-source licenses.
           </p>
         </div>
       </div>
     </section>
   );
 }
-

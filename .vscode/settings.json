@@ -55,14 +55,6 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "stylelint.validate": [
-    "css",
-    "scss"
-  ]
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "stylelint.validate": ["css", "scss"]
 }

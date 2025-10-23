@@ -5,6 +5,7 @@
 Next.js 15 website with sentra/ui brand system, TypeScript strict, and production-ready tooling.
 
 ## quickstart
+
 ```bash
 # install dependencies
 npm install
@@ -16,6 +17,7 @@ npm run dev
 ```
 
 ## tech stack
+
 - Next.js 15 + React 19 (App Router)
 - TypeScript strict mode
 - sentra/ui design tokens (dense, dark mode)
@@ -24,6 +26,7 @@ npm run dev
 - Codex Guard (CI quality checks)
 
 ## scripts
+
 - `npm run dev` - development server
 - `npm run build` - production build
 - `npm run start` - production server
@@ -33,6 +36,7 @@ npm run dev
 - `npm run guard:ci` - full CI checks
 
 ## structure
+
 - `src/app/` - Next.js App Router pages
 - `src/components/` - React components
 - `src/lib/` - utilities, helpers
@@ -41,6 +45,7 @@ npm run dev
 - `docs/agents/` - AI agent charters
 
 ## landing template
+
 - **Dark mode**: toggle via header button (adds/removes `.theme-dark` on `<html>`)
 - **Sections**: use `.section` (default) or `.section--alt` (alt surface); hero uses `.section--hero`
 - **Typography**: H1/H2 follow sentra/ui scale; add `.h2-underline` for spec underline (48px)
@@ -49,6 +54,7 @@ npm run dev
 - **Tokens**: see `public/styles/sentra-brand.css` for CSS variables; dark mode via `.theme-dark`
 
 ## agents
+
 - codex uix - UI/UX refinement specialist
 - codex guard - background quality & a11y
 - Sentra Engineer - assistant implementation

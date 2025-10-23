@@ -1,24 +1,24 @@
 // Developed by doctorcodex
 // CustomersSection: affiliate/customer logos grid with subtle animation
 
-import { AnimatedGroup } from "@/components/ui/animated-group";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { AnimatedGroup } from '@/components/ui/animated-group';
+import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const transitionVariants = {
   item: {
     hidden: {
       opacity: 0,
-      filter: "blur(12px)",
+      filter: 'blur(12px)',
       y: 12,
     },
     visible: {
       opacity: 1,
-      filter: "blur(0px)",
+      filter: 'blur(0px)',
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         bounce: 0.3,
         duration: 1.5,
       },
@@ -39,13 +39,10 @@ interface CustomersSectionProps {
 
 export default function SentraCustomers({ customers = [], className }: CustomersSectionProps) {
   return (
-    <section className={`bg-background pb-2 pt-16 md:pb-2 ${className ?? ""}`}>
+    <section className={`bg-background pb-2 pt-16 md:pb-2 ${className ?? ''}`}>
       <div className="group relative m-auto max-w-5xl px-6">
         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-          <Link
-            href="/"
-            className="block text-sm duration-150 hover:opacity-75"
-          >
+          <Link href="/" className="block text-sm duration-150 hover:opacity-75">
             <span>Meet Our Customers</span>
             <ChevronRight className="ml-1 inline-block size-3" />
           </Link>
@@ -80,5 +77,3 @@ export default function SentraCustomers({ customers = [], className }: Customers
     </section>
   );
 }
-
-

@@ -2,9 +2,9 @@
  * Architected by doctorcodex/ drferdiiskandar
  * Developed by doctorcodex/ drferdiiskandar
  */
-export default {
+module.exports = {
   printWidth: 100,
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   semi: true,
 };

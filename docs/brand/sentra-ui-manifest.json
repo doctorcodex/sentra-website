@@ -2,13 +2,7 @@
   "name": "sentra/ui",
   "version": "1.0.0",
   "brand": {
-    "tone": [
-      "teknis",
-      "modern",
-      "rapi",
-      "compact",
-      "presisi"
-    ],
+    "tone": ["teknis", "modern", "rapi", "compact", "presisi"],
     "icon_source": "lucide (shadcn)",
     "density": "dense",
     "dark_mode": {
@@ -65,14 +59,7 @@
   },
   "components": {
     "button": {
-      "variants": [
-        "default",
-        "primary",
-        "link",
-        "outline",
-        "ghost",
-        "disabled"
-      ],
+      "variants": ["default", "primary", "link", "outline", "ghost", "disabled"],
       "padding": "3px var(--control-pad-x)",
       "radius": "6px",
       "hover": "bg -> bg-alt, translateY(-1px)",
@@ -110,9 +97,5 @@
     "Jaga kontras dan focus-visible",
     "Pakai ikon Lucide 16px mengikuti warna teks"
   ],
-  "dont": [
-    "Padding tombol berlebihan",
-    "Shadow berat",
-    "Aksen warna kebanyakan"
-  ]
+  "dont": ["Padding tombol berlebihan", "Shadow berat", "Aksen warna kebanyakan"]
 }

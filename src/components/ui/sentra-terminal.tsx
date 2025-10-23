@@ -1,9 +1,9 @@
 // Developed by doctorcodex
 // Terminal demo with realistic typing animation - Mac style
 
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function SentraTerminal() {
   const [lines, setLines] = useState<string[]>([]);
@@ -11,19 +11,19 @@ export default function SentraTerminal() {
   const [currentChar, setCurrentChar] = useState(0);
 
   const terminalLines = [
-    "$ doctorcodex@sentra:~$ npm init -y",
-    "✓ Package initialized",
-    "$ doctorcodex@sentra:~$ npm install next@latest react@latest",
-    "✓ Dependencies installed",
-    "$ doctorcodex@sentra:~$ npx create-next-app@latest aadi-clinical",
-    "✓ Project structure created",
-    "$ doctorcodex@sentra:~/aadi-clinical$ cd aadi-clinical",
-    "$ doctorcodex@sentra:~/aadi-clinical$ npm run dev",
-    "✓ Server running on http://localhost:3000",
-    "$ doctorcodex@sentra:~/aadi-clinical$ dex --assist --deploy",
-    "✓ AI-powered clinical intelligence activated",
-    "🚀 AADI Clinical Platform ready at https://sentra-aadi.com",
-    "💡 Enhanced by doctorcodex + Dex AI collaboration",
+    '$ doctorcodex@sentra:~$ npm init -y',
+    '✓ Package initialized',
+    '$ doctorcodex@sentra:~$ npm install next@latest react@latest',
+    '✓ Dependencies installed',
+    '$ doctorcodex@sentra:~$ npx create-next-app@latest aadi-clinical',
+    '✓ Project structure created',
+    '$ doctorcodex@sentra:~/aadi-clinical$ cd aadi-clinical',
+    '$ doctorcodex@sentra:~/aadi-clinical$ npm run dev',
+    '✓ Server running on http://localhost:3000',
+    '$ doctorcodex@sentra:~/aadi-clinical$ dex --assist --deploy',
+    '✓ AI-powered clinical intelligence activated',
+    '🚀 AADI Clinical Platform ready at https://sentra-aadi.com',
+    '💡 Enhanced by doctorcodex + Dex AI collaboration',
   ];
 
   useEffect(() => {
@@ -57,9 +57,7 @@ export default function SentraTerminal() {
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
-          <div className="text-gray-300 text-xs font-medium ml-2">
-            doctorcodex@sentra:~
-          </div>
+          <div className="text-gray-300 text-xs font-medium ml-2">doctorcodex@sentra:~</div>
         </div>
         <div className="flex items-center space-x-2">
           <div className="text-gray-500 text-xs">zsh</div>
@@ -72,9 +70,9 @@ export default function SentraTerminal() {
           <div
             key={i}
             className={`transition-opacity duration-300 ${
-              line.startsWith("✓") || line.startsWith("🚀") || line.startsWith("💡")
-                ? "text-emerald-400"
-                : "text-green-400"
+              line.startsWith('✓') || line.startsWith('🚀') || line.startsWith('💡')
+                ? 'text-emerald-400'
+                : 'text-green-400'
             }`}
           >
             {line}
@@ -90,4 +88,3 @@ export default function SentraTerminal() {
     </div>
   );
 }
-

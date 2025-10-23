@@ -3,7 +3,7 @@
   // Developed by doctorcodex/ drferdiiskandar
   "todo-comment": {
     "prefix": "todo",
-    "body": ["// TODO: ${1:what} — owner: ${2:name} — ${CURRENT_DATE}"]
+    "body": ["// TODO: ${1:what} — owner: ${2:name} — ${CURRENT_DATE}"],
   },
   "test-block": {
     "prefix": "tb",
@@ -12,8 +12,8 @@
       "  it('should ${2:behavior}', () => {",
       "    ${3:// arrange-act-assert}",
       "  });",
-      "});"
-    ]
+      "});",
+    ],
   },
   "teks-favorit": {
     "prefix": "teksfavorit",
@@ -43,8 +43,8 @@
       "  100% {",
       "    background-position: 200% 50%;",
       "  }",
-      "}"
+      "}",
     ],
-    "description": "Gradient text with neon green emphasis and animation."
-  }
+    "description": "Gradient text with neon green emphasis and animation.",
+  },
 }

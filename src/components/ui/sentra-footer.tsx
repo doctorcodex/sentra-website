@@ -1,11 +1,11 @@
 // Developed by doctorcodex
 // Footer component - Shadcn UI Blocks Footer 04 design
 
-"use client";
+'use client';
 
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type NavItem = { name: string; href: React.ComponentProps<typeof Link>['href'] };
 
@@ -19,36 +19,36 @@ type Navigation = {
 export default function SentraFooter() {
   const navigation: Navigation = {
     product: [
-      { name: "Clinical Features", href: "#features" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "Documentation", href: "#docs" },
-      { name: "API Reference", href: "#api" },
+      { name: 'Clinical Features', href: '#features' },
+      { name: 'Pricing', href: '#pricing' },
+      { name: 'Documentation', href: '#docs' },
+      { name: 'API Reference', href: '#api' },
     ],
     company: [
-      { name: "About SENTRA", href: "#about" },
-      { name: "Blog", href: "#blog" },
-      { name: "Careers", href: "#careers" },
-      { name: "Press", href: "#press" },
+      { name: 'About SENTRA', href: '#about' },
+      { name: 'Blog', href: '#blog' },
+      { name: 'Careers', href: '#careers' },
+      { name: 'Press', href: '#press' },
     ],
     resources: [
-      { name: "Help Center", href: "#help" },
-      { name: "Clinical FAQ", href: "#faq" },
-      { name: "Support", href: "#support" },
-      { name: "Status", href: "#status" },
+      { name: 'Help Center', href: '#help' },
+      { name: 'Clinical FAQ', href: '#faq' },
+      { name: 'Support', href: '#support' },
+      { name: 'Status', href: '#status' },
     ],
     legal: [
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "HIPAA Compliance", href: "#hipaa" },
-      { name: "Security", href: "#security" },
+      { name: 'Privacy Policy', href: '#privacy' },
+      { name: 'Terms of Service', href: '#terms' },
+      { name: 'HIPAA Compliance', href: '#hipaa' },
+      { name: 'Security', href: '#security' },
     ],
   };
 
   const socialLinks = [
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "GitHub", icon: Github, href: "#" },
-    { name: "Email", icon: Mail, href: "mailto:contact@sentra-aadi.com" },
+    { name: 'Twitter', icon: Twitter, href: '#' },
+    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'GitHub', icon: Github, href: '#' },
+    { name: 'Email', icon: Mail, href: 'mailto:contact@sentra-aadi.com' },
   ];
 
   return (
@@ -68,7 +68,10 @@ export default function SentraFooter() {
                 priority
               />
               <p className="text-sm leading-relaxed text-gray-300 italic">
-                All content featured on this website, including but not limited to text, graphics, logos, images, audio clips, video clips, digital downloads, data compilations, and software, is the exclusive property of Sentra and its content suppliers, and is protected by international copyright and intellectual property laws.
+                All content featured on this website, including but not limited to text, graphics,
+                logos, images, audio clips, video clips, digital downloads, data compilations, and
+                software, is the exclusive property of Sentra and its content suppliers, and is
+                protected by international copyright and intellectual property laws.
               </p>
             </div>
             <div className="mt-8 flex gap-4">
@@ -101,7 +104,7 @@ export default function SentraFooter() {
             </div>
             <div className="mt-4 text-[17px] leading-[1.8] font-medium text-gray-300">
               <p>
-                System Architecture & Build Engineering by{" "}
+                System Architecture & Build Engineering by{' '}
                 <span className="font-semibold text-white">Doctorcodex</span>
               </p>
               <p className="mt-1 flex items-center justify-end gap-2">
@@ -110,9 +113,7 @@ export default function SentraFooter() {
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
 }
-

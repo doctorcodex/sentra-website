@@ -70,7 +70,9 @@ export default function ThemeToggle() {
     );
   }
 
-  const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const isDark =
+    theme === 'dark' ||
+    (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   return (
     <button
@@ -88,5 +90,3 @@ export default function ThemeToggle() {
     </button>
   );
 }
-
-

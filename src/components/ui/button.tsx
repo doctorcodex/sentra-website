@@ -1,7 +1,7 @@
 // Developed by doctorcodex
 // Motion-enabled Button compatible with shadcn API shape (minimal)
 
-"use client";
+'use client';
 
 import { cn } from '@/lib/utils';
 import { motion, type MotionProps } from 'framer-motion';
@@ -34,22 +34,12 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const Button = React.forwardRef<HTMLButtonElement, MotionButtonProps & HTMLButtonProps>(
-  (
-    {
-      asChild = false,
-      children,
-      className,
-      variant = 'primary',
-      size = 'md',
-      ...props
-    },
-    ref
-  ) => {
+  ({ asChild = false, children, className, variant = 'primary', size = 'md', ...props }, ref) => {
     const classNames = cn(
       'inline-flex items-center justify-center rounded-lg border font-semibold shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none',
       sizeClasses[size],
       variantClasses[variant],
-      className
+      className,
     );
 
     if (asChild && React.isValidElement(children)) {
@@ -61,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, MotionButtonProps & HTMLButto
             className: cn((child.props as any).className, classNames),
             ref,
             ...props,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
           } as any)}
         </motion.span>
       );
@@ -72,7 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, MotionButtonProps & HTMLButto
         {children}
       </motion.button>
     );
-  }
+  },
 );
 
 Button.displayName = 'Button';

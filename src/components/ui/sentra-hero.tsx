@@ -1,19 +1,16 @@
 // Developed by doctorcodex
 // Hero section with animated text
 
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { MoveRight, PhoneCall } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { MoveRight, PhoneCall } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 
 export default function SentraHero() {
   const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
-    () => ["cepat", "akurat", "aman", "terpercaya", "modern"],
-    []
-  );
+  const titles = useMemo(() => ['cepat', 'akurat', 'aman', 'terpercaya', 'modern'], []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -44,8 +41,8 @@ export default function SentraHero() {
                   <motion.span
                     key={index}
                     className="absolute font-semibold text-[#002157]"
-                    initial={{ opacity: 0, y: "-100" }}
-                    transition={{ type: "spring", stiffness: 50 }}
+                    initial={{ opacity: 0, y: '-100' }}
+                    transition={{ type: 'spring', stiffness: 50 }}
                     animate={
                       titleNumber === index
                         ? {
@@ -65,8 +62,9 @@ export default function SentraHero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Sistem pendukung keputusan klinis yang dirancang khusus untuk layanan kesehatan primer.
-              Membantu dokter menegakkan diagnosis dan membuat rencana terapi dengan cepat, aman, dan berbasis data.
+              Sistem pendukung keputusan klinis yang dirancang khusus untuk layanan kesehatan
+              primer. Membantu dokter menegakkan diagnosis dan membuat rencana terapi dengan cepat,
+              aman, dan berbasis data.
             </p>
           </div>
           <div className="flex flex-row gap-3">

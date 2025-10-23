@@ -2,9 +2,9 @@ name: Codex Guard
 
 on:
   push:
-    branches: ["**"]
+    branches: ['**']
   pull_request:
-    branches: ["**"]
+    branches: ['**']
 
 jobs:
   guard:
@@ -36,5 +36,3 @@ jobs:
 
       - name: Accessibility (Axe)
         run: npx axe --tags wcag2a,wcag2aa --exit 1 index.html
-
-

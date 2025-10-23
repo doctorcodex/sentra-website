@@ -1,18 +1,18 @@
 // Developed by doctorcodex
 // Floating bottom-left breadcrumb demo
 
-"use client";
+'use client';
 
 import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator
-} from "@/components/ui/breadcrumb";
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 // Dropdown menu removed for simplification
-import { Home } from "lucide-react";
+import { Home } from 'lucide-react';
 
 export default function BreadcrumbCollapsed() {
   return (
@@ -37,5 +37,3 @@ export default function BreadcrumbCollapsed() {
     </div>
   );
 }
-
-
