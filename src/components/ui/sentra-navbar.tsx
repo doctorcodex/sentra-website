@@ -96,10 +96,10 @@ export interface Navbar03Props extends React.HTMLAttributes<HTMLElement> {
 
 // Default navigation links
 const defaultNavigationLinks: Navbar03NavItem[] = [
-  { href: '#', label: 'Home', active: true },
-  { href: '#', label: 'Features' },
-  { href: '#', label: 'Pricing' },
-  { href: '#', label: 'About' },
+  { href: '/', label: 'Home', active: true },
+  { href: '/komponen', label: 'Komponen' },
+  { href: '#features', label: 'Features' },
+  { href: '#about', label: 'About' },
 ];
 
 const SentraNavbar = React.forwardRef<HTMLElement, Navbar03Props>(
