@@ -1,6 +1,6 @@
 // Developed by doctorcodex
 // PostCSS config for Tailwind + Autoprefixer
-export default {
+module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},

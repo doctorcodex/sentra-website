@@ -3,6 +3,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const ICONS_ROW1 = [
@@ -57,7 +58,7 @@ export default function SentraIntegrations() {
           <div className="flex gap-8 whitespace-nowrap animate-scroll-left">
             {repeatedIcons(ICONS_ROW1, 4).map((src, i) => (
               <div key={i} className="h-16 w-16 flex-shrink-0 rounded-full bg-white dark:bg-gray-300 shadow-md flex items-center justify-center">
-                <img src={src} alt="icon" className="h-10 w-10 object-contain" />
+                <Image src={src} alt="integration icon" width={40} height={40} className="object-contain" />
               </div>
             ))}
           </div>
@@ -66,7 +67,7 @@ export default function SentraIntegrations() {
           <div className="flex gap-8 whitespace-nowrap mt-6 animate-scroll-right">
             {repeatedIcons(ICONS_ROW2, 4).map((src, i) => (
               <div key={i} className="h-16 w-16 flex-shrink-0 rounded-full bg-white dark:bg-gray-300 shadow-md flex items-center justify-center">
-                <img src={src} alt="icon" className="h-10 w-10 object-contain" />
+                <Image src={src} alt="integration icon" width={40} height={40} className="object-contain" />
               </div>
             ))}
           </div>
