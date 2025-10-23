@@ -3,28 +3,28 @@
 
 'use client';
 
-import Link from 'next/link';
-import { 
-  Box, 
-  Calendar, 
-  CheckSquare, 
-  ChevronRight, 
-  Circle, 
-  Command, 
-  FileText, 
-  Grid3x3, 
-  Heart, 
-  Layout, 
-  Menu, 
-  MessageSquare, 
-  Package, 
-  Settings, 
-  Sparkles, 
-  Star, 
-  Table, 
-  Type, 
-  Zap 
+import {
+    Box,
+    Calendar,
+    CheckSquare,
+    ChevronRight,
+    Circle,
+    Command,
+    FileText,
+    Grid3x3,
+    Heart,
+    Layout,
+    Menu,
+    MessageSquare,
+    Package,
+    Settings,
+    Sparkles,
+    Star,
+    Table,
+    Type,
+    Zap
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface ComponentCard {
   name: string;
@@ -162,16 +162,16 @@ export default function KomponenPage() {
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
       {/* Hero Section */}
-      <section style={{ 
+      <section style={{
         padding: '80px 24px 60px',
         backgroundColor: 'var(--bg-alt)',
         borderBottom: '1px solid var(--border)',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           {/* Appreciation Badge */}
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
             gap: '8px',
             padding: '6px 12px',
             backgroundColor: 'rgba(247, 29, 37, 0.08)',
@@ -180,8 +180,8 @@ export default function KomponenPage() {
             marginBottom: '24px',
           }}>
             <Heart className="h-4 w-4" style={{ color: '#F71D25' }} />
-            <span style={{ 
-              fontSize: '12px', 
+            <span style={{
+              fontSize: '12px',
               fontWeight: 600,
               color: 'var(--fg)',
               letterSpacing: '0.02em',
@@ -190,8 +190,8 @@ export default function KomponenPage() {
             </span>
           </div>
 
-          <h1 style={{ 
-            fontSize: '48px', 
+          <h1 style={{
+            fontSize: '48px',
             lineHeight: '56px',
             fontWeight: 700,
             color: 'var(--fg)',
@@ -200,9 +200,9 @@ export default function KomponenPage() {
           }}>
             Komponen UI sentra/ui
           </h1>
-          
-          <p style={{ 
-            fontSize: '18px', 
+
+          <p style={{
+            fontSize: '18px',
             lineHeight: '28px',
             color: 'var(--muted)',
             maxWidth: '720px',
@@ -277,14 +277,14 @@ export default function KomponenPage() {
       </section>
 
       {/* Category Filter */}
-      <section style={{ 
+      <section style={{
         padding: '32px 24px',
         borderBottom: '1px solid var(--border)',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ 
-            display: 'flex', 
-            gap: '12px', 
+          <div style={{
+            display: 'flex',
+            gap: '12px',
             flexWrap: 'wrap',
             justifyContent: 'center',
           }}>
@@ -314,9 +314,9 @@ export default function KomponenPage() {
                   e.currentTarget.style.backgroundColor = 'var(--bg-alt)';
                 }}
               >
-                <div style={{ 
-                  width: '8px', 
-                  height: '8px', 
+                <div style={{
+                  width: '8px',
+                  height: '8px',
                   borderRadius: '50%',
                   backgroundColor: cat.color,
                 }} />
@@ -330,8 +330,8 @@ export default function KomponenPage() {
       {/* Components Grid */}
       <section id="komponen" style={{ padding: '80px 24px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <h2 style={{ 
-            fontSize: '32px', 
+          <h2 style={{
+            fontSize: '32px',
             lineHeight: '40px',
             fontWeight: 700,
             color: 'var(--fg)',
@@ -341,7 +341,7 @@ export default function KomponenPage() {
             Semua Komponen
           </h2>
 
-          <div style={{ 
+          <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '16px',
@@ -420,7 +420,7 @@ export default function KomponenPage() {
                   </div>
 
                   {/* Arrow */}
-                  <div style={{ 
+                  <div style={{
                     marginTop: 'auto',
                     display: 'flex',
                     alignItems: 'center',
@@ -476,26 +476,26 @@ export default function KomponenPage() {
             marginBottom: '32px',
           }}>
             sentra/ui terinspirasi dari filosofi desain{' '}
-            <a 
-              href="https://ui.shadcn.com" 
-              target="_blank" 
+            <a
+              href="https://ui.shadcn.com"
+              target="_blank"
               rel="noopener noreferrer"
-              style={{ 
-                color: 'var(--fg)', 
+              style={{
+                color: 'var(--fg)',
                 fontWeight: 600,
                 textDecoration: 'underline',
               }}
             >
               shadcn/ui
             </a>
-            {' '}— sistem komponen yang bersih, modular, dan copy-paste friendly. 
+            {' '}— sistem komponen yang bersih, modular, dan copy-paste friendly.
             Kami sangat menghargai kontribusi{' '}
-            <a 
-              href="https://twitter.com/shadcn" 
-              target="_blank" 
+            <a
+              href="https://twitter.com/shadcn"
+              target="_blank"
               rel="noopener noreferrer"
-              style={{ 
-                color: 'var(--fg)', 
+              style={{
+                color: 'var(--fg)',
                 fontWeight: 600,
                 textDecoration: 'underline',
               }}

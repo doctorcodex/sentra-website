@@ -93,7 +93,7 @@ export default function ButtonPage() {
       <section style={{ padding: '60px 24px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '48px' }}>
-            
+
             {/* Preview Section */}
             <div>
               <h2 style={{
@@ -127,14 +127,14 @@ export default function ButtonPage() {
                 <Button style={{ backgroundColor: '#F71D25', color: '#ffffff' }}>
                   Primary Button
                 </Button>
-                <Button style={{ 
-                  backgroundColor: 'transparent', 
+                <Button style={{
+                  backgroundColor: 'transparent',
                   border: '1px solid var(--border)',
                   color: 'var(--fg)',
                 }}>
                   Outline Button
                 </Button>
-                <Button style={{ 
+                <Button style={{
                   backgroundColor: 'transparent',
                   color: 'var(--fg)',
                 }}>
@@ -194,8 +194,8 @@ export default function ButtonPage() {
                   <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--fg)', marginBottom: '12px' }}>
                     Outline
                   </div>
-                  <Button style={{ 
-                    backgroundColor: 'transparent', 
+                  <Button style={{
+                    backgroundColor: 'transparent',
                     border: '1px solid var(--border)',
                     color: 'var(--fg)',
                   }}>
@@ -208,7 +208,7 @@ export default function ButtonPage() {
                   <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--fg)', marginBottom: '12px' }}>
                     Ghost
                   </div>
-                  <Button style={{ 
+                  <Button style={{
                     backgroundColor: 'transparent',
                     color: 'var(--fg)',
                   }}>
@@ -221,7 +221,7 @@ export default function ButtonPage() {
                   <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--fg)', marginBottom: '12px' }}>
                     Link
                   </div>
-                  <Button style={{ 
+                  <Button style={{
                     backgroundColor: 'transparent',
                     color: '#0085FF',
                     textDecoration: 'underline',
@@ -314,7 +314,7 @@ export default function ButtonPage() {
                 flexWrap: 'wrap',
                 gap: '12px',
               }}>
-                <Button 
+                <Button
                   onClick={handleAsyncAction}
                   disabled={loading}
                   style={{ backgroundColor: '#F71D25', color: '#ffffff' }}
@@ -369,25 +369,25 @@ export default function Example() {
     <div>
       {/* Default */}
       <Button>Default Button</Button>
-      
+
       {/* Primary dengan ikon */}
-      <Button style={{ 
-        backgroundColor: '#F71D25', 
-        color: '#ffffff' 
+      <Button style={{
+        backgroundColor: '#F71D25',
+        color: '#ffffff'
       }}>
         <Mail className="h-4 w-4" style={{ marginRight: '8px' }} />
         Send Email
       </Button>
-      
+
       {/* Outline */}
-      <Button style={{ 
+      <Button style={{
         backgroundColor: 'transparent',
         border: '1px solid var(--border)',
         color: 'var(--fg)'
       }}>
         Cancel
       </Button>
-      
+
       {/* Disabled */}
       <Button disabled>
         Disabled
@@ -422,8 +422,8 @@ export default function Example() {
                 borderRadius: '8px',
                 overflow: 'hidden',
               }}>
-                <table style={{ 
-                  width: '100%', 
+                <table style={{
+                  width: '100%',
                   borderCollapse: 'collapse',
                   backgroundColor: 'var(--bg-alt)',
                 }}>
