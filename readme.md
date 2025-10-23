@@ -1,4 +1,4 @@
-# 🏥 SENTRA AADI — Clinical Intelligence Platform
+# 🏥 Augmented Artificial Intelligent Diagnostic Integrated
 
 <div align="center">
 
