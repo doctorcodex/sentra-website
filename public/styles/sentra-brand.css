@@ -240,6 +240,9 @@ body, .card, section {
   --accent: var(--brand-red);
   --accent-alt: var(--brand-blue);
   --warning: var(--brand-yellow);
+
+  /* tailwind color overrides */
+  color-scheme: dark;
 }
 
 .theme-dark body {
@@ -286,5 +289,74 @@ body, .card, section {
 
 .theme-dark .lead {
   color: var(--fg);
+}
+
+/* comprehensive dark mode coverage */
+.theme-dark * {
+  border-color: var(--border);
+}
+
+.theme-dark section {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.theme-dark .bg-white,
+.theme-dark [class*="bg-white"] {
+  background-color: var(--bg) !important;
+}
+
+.theme-dark .bg-gray-50,
+.theme-dark .bg-blue-50,
+.theme-dark [class*="bg-gray"],
+.theme-dark [class*="bg-blue"] {
+  background-color: var(--bg-alt) !important;
+}
+
+.theme-dark .text-gray-600,
+.theme-dark .text-gray-700,
+.theme-dark .text-gray-800 {
+  color: var(--muted) !important;
+}
+
+.theme-dark .border-gray-200,
+.theme-dark .border-gray-300 {
+  border-color: var(--border) !important;
+}
+
+/* ensure all text is visible */
+.theme-dark div,
+.theme-dark span {
+  color: inherit;
+}
+
+/* specific overrides for common patterns */
+.theme-dark [style*="color: #002157"],
+.theme-dark [style*="color:#002157"] {
+  color: var(--fg) !important;
+}
+
+/* arbitrary value text classes handled by tailwind */
+
+/* fix input and form elements */
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+  background: var(--bg-alt);
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: var(--muted);
+}
+
+/* shadows in dark mode */
+.theme-dark .shadow-sm,
+.theme-dark .shadow,
+.theme-dark .shadow-md,
+.theme-dark .shadow-lg {
+  box-shadow: var(--shadow-md);
 }
 

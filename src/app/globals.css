@@ -20,15 +20,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.size-5 {
-  width: 1.25rem;
-  height: 1.25rem;
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
-.size-8\.5 {
-  width: 2.125rem;
-  height: 2.125rem;
-}
+/* utility classes for specific sizes */
 
 /* sentra/ui extensions — dense layout utilities */
 .section .container {
