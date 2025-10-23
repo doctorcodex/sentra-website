@@ -1,7 +1,6 @@
 # sentra-website
 
-**Architected by doctorcodex / drferdiiskandar**
-**Developed by doctorcodex / drferdiiskandar**
+**Architected by doctorcodex**
 
 Next.js 15 website with sentra/ui brand system, TypeScript strict, and production-ready tooling.
 
@@ -52,4 +51,4 @@ npm run dev
 ## agents
 - codex uix - UI/UX refinement specialist
 - codex guard - background quality & a11y
-- Sentra Engineer - full-stack implementation
+- Sentra Engineer - assistant implementation
