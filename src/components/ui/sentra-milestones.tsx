@@ -53,7 +53,7 @@ export default function SentraMilestones() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function SentraMilestones() {
         {/* Timeline Container */}
         <div className="relative mt-[200px]">
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-black transform -translate-y-1/2"></div>
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 transform -translate-y-1/2" style={{ backgroundColor: 'var(--fg)' }}></div>
 
           {/* Timeline Points and Cards */}
           <div className="relative flex justify-between items-center">
@@ -92,11 +92,11 @@ export default function SentraMilestones() {
               >
                 {/* Timeline Point */}
                 <motion.div
-                  className={`w-4 h-4 rounded-full border-2 ${
-                    milestone.completed
-                      ? 'bg-white border-black'
-                      : 'bg-gray-300 border-gray-300'
-                  } relative z-10 flex items-center justify-center`}
+                  className="w-4 h-4 rounded-full border-2 relative z-10 flex items-center justify-center"
+                  style={{
+                    backgroundColor: milestone.completed ? 'var(--bg)' : 'var(--muted)',
+                    borderColor: milestone.completed ? 'var(--fg)' : 'var(--muted)'
+                  }}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{
@@ -107,7 +107,8 @@ export default function SentraMilestones() {
                 >
                   {milestone.completed && (
                     <motion.div
-                      className="w-2 h-2 bg-black rounded-full"
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: 'var(--fg)' }}
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{
@@ -147,7 +148,7 @@ export default function SentraMilestones() {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden">
+                  <div className="rounded-lg border shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-alt)', borderColor: 'var(--border)' }}>
                     {/* Header with Oxford Blue or Red Orange for Machine Intelligence */}
                     <div className={`px-4 py-2 ${
                       milestone.title === "Machine Intelligence"
@@ -162,11 +163,11 @@ export default function SentraMilestones() {
                     {/* Content */}
                     <div className="p-4">
                       <div className="text-center mb-3">
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs" style={{ color: 'var(--muted)' }}>
                           {milestone.date}
                         </p>
                       </div>
-                      <p className="text-xs text-gray-600 leading-relaxed">
+                      <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>
                         {milestone.description}
                       </p>
                     </div>

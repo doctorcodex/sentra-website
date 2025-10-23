@@ -1,9 +1,11 @@
 {
   "$schema": "https://design-tokens.org/schema.json",
-  "version": "1.0",
+  "version": "2.0",
   "metadata": {
     "name": "sentra/ui tokens",
-    "mode": "compact-dense"
+    "mode": "compact-dense",
+    "darkMode": "full-support",
+    "updated": "2025-10-23"
   },
   "tokens": {
     "color": {
@@ -23,19 +25,24 @@
       },
       "surface": {
         "bg": {
-          "value": "#ffffff"
+          "value": "#ffffff",
+          "description": "Main background - white in light, deep navy in dark"
         },
         "bgAlt": {
-          "value": "#f7f8fb"
+          "value": "#f7f8fb",
+          "description": "Alternative background - light gray in light, darker navy in dark"
         },
         "fg": {
-          "value": "{color.brand.oxford}"
+          "value": "#000000",
+          "description": "Foreground text - black in light, soft white in dark"
         },
         "muted": {
-          "value": "rgba(0,33,87,0.60)"
+          "value": "rgba(0,33,87,0.60)",
+          "description": "Muted text - dark muted in light, light muted in dark"
         },
         "border": {
-          "value": "rgba(0,33,87,0.12)"
+          "value": "rgba(0,33,87,0.12)",
+          "description": "Border color - dark transparent in light, light transparent in dark"
         }
       },
       "semantic": {
@@ -149,31 +156,57 @@
   },
   "modes": {
     "dark": {
+      "metadata": {
+        "philosophy": "Deep navy (not pure black) for professionalism and reduced eye strain",
+        "implementation": "Class-based (.theme-dark) with CSS variables",
+        "transitions": "300ms smooth cubic-bezier easing"
+      },
       "color": {
         "surface": {
           "bg": {
-            "value": "#07090f"
+            "value": "#0a0e1a",
+            "description": "Deep navy background - professional and easy on eyes"
           },
           "bgAlt": {
-            "value": "#0c1220"
+            "value": "#141827",
+            "description": "Darker navy for cards and elevated surfaces"
           },
           "fg": {
-            "value": "#e8eefc"
+            "value": "#e8edf5",
+            "description": "Soft white for text - high contrast without harshness"
           },
           "muted": {
-            "value": "rgba(232,238,252,0.66)"
+            "value": "rgba(232,237,245,0.65)",
+            "description": "Muted light text for secondary content"
           },
           "border": {
-            "value": "rgba(232,238,252,0.12)"
+            "value": "rgba(232,237,245,0.12)",
+            "description": "Subtle borders for element separation"
           }
         }
       },
       "shadow": {
         "sm": {
-          "value": "0 1px 2px rgba(0,0,0,0.40)"
+          "value": "0 2px 4px rgba(0,0,0,0.5)",
+          "description": "Enhanced shadow for depth in dark mode"
         },
         "md": {
-          "value": "0 1px 2px rgba(0,0,0,0.40), 0 20px 60px rgba(0,0,0,0.45)"
+          "value": "0 4px 8px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.5)",
+          "description": "Strong shadow for elevated elements in dark mode"
+        }
+      },
+      "features": {
+        "iconInversion": {
+          "value": "filter: invert(1)",
+          "description": "SVG icons inverted for visibility"
+        },
+        "accentColors": {
+          "value": "preserved",
+          "description": "Brand colors (red, yellow, blue) remain vibrant"
+        },
+        "localStorage": {
+          "key": "sentra-theme",
+          "values": ["light", "dark", "system"]
         }
       }
     }

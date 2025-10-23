@@ -139,7 +139,7 @@ const categories = [
 
 export default function SentraCredits() {
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden" style={{ backgroundColor: 'var(--bg)' }}>
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,33,87,0.03)_1px,transparent_1px)] [background-size:24px_24px]" />
 
@@ -226,13 +226,34 @@ export default function SentraCredits() {
               We extend our sincere appreciation to the creators and contributors of the open-source technologies that power this system.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Badge className="bg-blue-100 text-blue-800 border-blue-200">
+              <Badge
+                className="border"
+                style={{
+                  backgroundColor: 'rgba(0, 33, 87, 0.1)',
+                  color: '#002157',
+                  borderColor: 'rgba(0, 33, 87, 0.3)'
+                }}
+              >
                 100% Open Source Licensed
               </Badge>
-              <Badge className="bg-green-100 text-green-800 border-green-200">
+              <Badge
+                className="border"
+                style={{
+                  backgroundColor: 'rgba(0, 33, 87, 0.1)',
+                  color: '#002157',
+                  borderColor: 'rgba(0, 33, 87, 0.3)'
+                }}
+              >
                 51 Dependencies
               </Badge>
-              <Badge className="bg-purple-100 text-purple-800 border-purple-200">
+              <Badge
+                className="border"
+                style={{
+                  backgroundColor: 'rgba(0, 33, 87, 0.1)',
+                  color: '#002157',
+                  borderColor: 'rgba(0, 33, 87, 0.3)'
+                }}
+              >
                 MIT & Apache Licensed
               </Badge>
             </div>

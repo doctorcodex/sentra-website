@@ -1,6 +1,7 @@
 {
   "name": "sentra/ui",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "updated": "2025-10-23",
   "brand": {
     "tone": [
       "teknis",
@@ -13,7 +14,11 @@
     "density": "dense",
     "dark_mode": {
       "class": "theme-dark",
-      "strategy": "class-toggle"
+      "strategy": "class-toggle with CSS variables",
+      "system_detection": true,
+      "local_storage": "sentra-theme",
+      "transitions": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "philosophy": "Deep navy instead of pure black for professionalism"
     }
   },
   "design_principles": [
@@ -38,15 +43,26 @@
       "yellow": "#FEE505",
       "blue": "#0085FF"
     },
-    "roles": {
+    "light_mode": {
       "bg": "#ffffff",
       "bg_alt": "#f7f8fb",
-      "fg": "#002157",
+      "fg": "#000000",
       "muted": "rgba(0,33,87,0.60)",
       "border": "rgba(0,33,87,0.12)",
       "accent": "#F71D25",
       "accent_alt": "#0085FF",
       "warning": "#FEE505"
+    },
+    "dark_mode": {
+      "bg": "#0a0e1a",
+      "bg_alt": "#141827",
+      "fg": "#e8edf5",
+      "muted": "rgba(232,237,245,0.65)",
+      "border": "rgba(232,237,245,0.12)",
+      "accent": "#F71D25",
+      "accent_alt": "#0085FF",
+      "warning": "#FEE505",
+      "note": "Accent colors remain vibrant and unchanged"
     }
   },
   "spacing": {

@@ -1,6 +1,6 @@
 # sentra/ui — Design Spec (External)
 
-Versi: 1.0 • Mode: **Compact/Dense** • Ikon: **Lucide (shadcn)**
+Versi: 2.0 • Mode: **Compact/Dense** • Ikon: **Lucide (shadcn)** • Dark Mode: **Full Support**
 
 ## 1. Prinsip
 - **Presisi, padat, modular.** Ruang secukupnya; layout rapat tapi tetap rapi.
@@ -15,8 +15,11 @@ Versi: 1.0 • Mode: **Compact/Dense** • Ikon: **Lucide (shadcn)**
 | `--brand-yellow` | `#FEE505` | Peringatan |
 | `--brand-blue` | `#0085FF` | Aksen alternatif / info |
 
-Neutrals:
-- `--bg` `#ffffff`, `--bg-alt` `#f7f8fb`, `--fg` `var(--brand-oxford)`, `--muted` `rgba(0,33,87,0.60)`, `--border` `rgba(0,33,87,0.12)`
+**Light Mode Neutrals:**
+- `--bg` `#ffffff`, `--bg-alt` `#f7f8fb`, `--fg` `#000000`, `--muted` `rgba(0,33,87,0.60)`, `--border` `rgba(0,33,87,0.12)`
+
+**Dark Mode Neutrals:**
+- `--bg` `#0a0e1a` (deep navy), `--bg-alt` `#141827` (darker navy), `--fg` `#e8edf5` (soft white), `--muted` `rgba(232,237,245,0.65)`, `--border` `rgba(232,237,245,0.12)`
 
 ## 3. Tipografi
 - **Font:** Inter.
@@ -63,9 +66,23 @@ Neutrals:
 - Kontras minimal 4.5:1 untuk teks isi.
 - Focus-visible selalu terlihat (outline 2px accent).
 
-## 8. Mode Gelap
-- Aktifkan dengan `.theme-dark` pada `<body>`/`<html>`.
-- Netral bergerak ke `#07090f` / `#0c1220`; teks ke `#e8eefc`.
+## 8. Mode Gelap (Dark Mode)
+- **Aktivasi:** Class `.theme-dark` pada `<html>` atau `<body>`
+- **Auto-detection:** Detect system preference `prefers-color-scheme: dark`
+- **Persistence:** Save ke `localStorage` key `sentra-theme`
+- **Transitions:** Smooth 300ms cubic-bezier untuk semua color changes
+- **Philosophy:** Deep navy (bukan hitam penuh) untuk profesionalisme dan mengurangi eye strain
+- **Icon Strategy:** SVG icons di-invert dengan `filter: invert(1)` untuk visibility
+- **Shadows:** Enhanced shadows untuk depth perception: `0 4px 8px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.5)`
+- **Text Hierarchy:**
+  - Headings: `var(--fg)` (#e8edf5)
+  - Body text: `var(--muted)` (rgba(232,237,245,0.65))
+  - Accent colors: Tetap vibrant (Red, Yellow, Blue)
+- **Components:**
+  - Cards: `var(--bg-alt)` untuk separation dari background
+  - Borders: Subtle `rgba(232,237,245,0.12)`
+  - Inputs: Dark background dengan light text
+  - Buttons: Accent colors tetap, background adjusted
 
 ## 9. Ikon
 - Standar: **Lucide** (shadcn). Nama ikon direferensikan sebagai `lucide:<name>`.
@@ -78,12 +95,27 @@ Neutrals:
 
 ### Snippet CSS Variables (ringkas)
 ```css
-:root{
+:root {
   --brand-oxford:#002157; --brand-red:#F71D25; --brand-yellow:#FEE505; --brand-blue:#0085FF;
-  --bg:#fff; --bg-alt:#f7f8fb; --fg:var(--brand-oxford); --muted:rgba(0,33,87,.60); --border:rgba(0,33,87,.12);
+  --bg:#ffffff; --bg-alt:#f7f8fb; --fg:#000000; --muted:rgba(0,33,87,.60); --border:rgba(0,33,87,.12);
   --radius-sm:6px; --shadow-sm:0 1px 2px rgba(0,0,0,.06);
   --fs-12:12px;--lh-12:18px; --fs-14:14px;--lh-14:20px; --fs-20:20px;--lh-20:28px; --fs-36:36px;--lh-36:42px;
   --space-2:6px; --space-3:10px; --space-4:14px; --space-5:18px;
   --control-h-md:32px; --control-pad-x:8px;
 }
+
+.theme-dark {
+  --bg:#0a0e1a; --bg-alt:#141827; --fg:#e8edf5; --muted:rgba(232,237,245,.65); --border:rgba(232,237,245,.12);
+  --shadow-sm:0 2px 4px rgba(0,0,0,.5); --shadow-md:0 4px 8px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.5);
+  color-scheme: dark;
+}
+
+/* Icon inversion for dark mode */
+.theme-dark img[src*="/icons/"] {
+  filter: invert(1);
+}
+
+/* Smooth transitions */
+html { transition: background-color 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s cubic-bezier(0.4,0,0.2,1); }
+body, .card, section { transition: background-color 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s cubic-bezier(0.4,0,0.2,1), border-color 0.3s cubic-bezier(0.4,0,0.2,1); }
 ```

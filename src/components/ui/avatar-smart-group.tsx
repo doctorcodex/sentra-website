@@ -3,14 +3,14 @@
 
 "use client";
 
-import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent,
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useState } from "react";
 
 interface User {
   name: string;
@@ -87,10 +87,14 @@ export function AvatarSmartGroup({
                 </div>
               </TooltipTrigger>
               <TooltipContent
-                className={`${tooltipBg} text-foreground shadow-md rounded-lg px-3 py-2`}
+                className="shadow-md rounded-lg px-3 py-2 border-2 border-gray-800"
+                style={{
+                  backgroundColor: '#FEE505',
+                  color: '#002157'
+                }}
               >
-                <p className="font-semibold">{user.name}</p>
-                {user.role && <p className="text-xs opacity-80">{user.role}</p>}
+                <p className="font-semibold" style={{ color: '#002157' }}>{user.name}</p>
+                {user.role && <p className="text-xs" style={{ color: '#002157', opacity: 0.8 }}>{user.role}</p>}
               </TooltipContent>
             </Tooltip>
           );

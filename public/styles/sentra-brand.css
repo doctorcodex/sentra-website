@@ -291,6 +291,11 @@ body, .card, section {
   color: var(--fg);
 }
 
+/* invert icons in dark mode */
+.theme-dark img[src*="/icons/"] {
+  filter: invert(1);
+}
+
 /* comprehensive dark mode coverage */
 .theme-dark * {
   border-color: var(--border);

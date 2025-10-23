@@ -66,7 +66,12 @@ function DevDiagnostics() {
   return (
     <span
       title="Runtime tests for summary generator"
-      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[13px] font-semibold border ${allPass ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-rose-50 text-rose-700 border-rose-200"}`}
+      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[13px] font-semibold border`}
+      style={{
+        color: allPass ? '#10b981' : '#f43f5e',
+        backgroundColor: allPass ? 'rgba(16, 185, 129, 0.15)' : 'rgba(244, 63, 94, 0.15)',
+        borderColor: allPass ? '#10b981' : '#f43f5e'
+      }}
     >
       <span className={`h-2 w-2 rounded-full ${allPass ? "bg-emerald-500" : "bg-rose-500"}`} />
       {allPass ? "Tests passed" : "Tests failed"}
@@ -376,7 +381,14 @@ export default function SentraAadiDemo() {
                 <input type="checkbox" checked={animationEnabled} onChange={(e)=>setAnimationEnabled(e.target.checked)} style={{ accentColor: accent }} />
                 Animasi autofill
               </label>
-              <span className="hidden md:inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-[13px] font-semibold text-emerald-700 border border-emerald-200">
+              <span
+                className="hidden md:inline-flex items-center gap-1 rounded-full px-3 py-1 text-[13px] font-semibold border"
+                style={{
+                  color: '#10b981',
+                  backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                  borderColor: '#10b981'
+                }}
+              >
                 <span className="h-2 w-2 rounded-full bg-emerald-500" /> FHIR LINK
               </span>
             </div>
@@ -442,9 +454,9 @@ export default function SentraAadiDemo() {
               <div ref={summaryBoxRef} className="mt-4 rounded-lg border p-4 text-[13px] leading-relaxed relative" style={{ borderColor: oxford }}>
                 <div className="mb-2 flex items-center gap-3">
                   <span className="inline-block h-3 w-3 rounded-full" style={{ backgroundColor: accent }} />
-                  <span className="font-semibold text-[14px]" style={{ color: oxford }}>Ringkasan Klinis</span>
+                  <span className="font-semibold text-[14px]" style={{ color: 'var(--fg)' }}>Ringkasan Klinis</span>
                 </div>
-                <pre className="whitespace-pre-wrap text-gray-800">{clinicalSummary}</pre>
+                <pre className="whitespace-pre-wrap" style={{ color: 'var(--fg)' }}>{clinicalSummary}</pre>
               </div>
             )}
           </section>
@@ -455,20 +467,20 @@ export default function SentraAadiDemo() {
 
             <Field label="Medication">
               <div className="space-y-2">
-                <div className="flex items-center gap-2 p-2 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="flex items-center gap-2 p-2 rounded-lg border border-blue-200" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)' }}>
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-[13px] font-medium">Paracetamol 500mg</span>
-                  <span className="text-[12px] text-gray-600">3x1</span>
+                  <span className="text-[13px] font-medium" style={{ color: 'var(--fg)' }}>Paracetamol 500mg</span>
+                  <span className="text-[12px]" style={{ color: 'var(--muted)' }}>3x1</span>
                 </div>
-                <div className="flex items-center gap-2 p-2 bg-green-50 rounded-lg border border-green-200">
+                <div className="flex items-center gap-2 p-2 rounded-lg border border-green-200" style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-[13px] font-medium">Amoxicillin 500mg</span>
-                  <span className="text-[12px] text-gray-600">3x1</span>
+                  <span className="text-[13px] font-medium" style={{ color: 'var(--fg)' }}>Amoxicillin 500mg</span>
+                  <span className="text-[12px]" style={{ color: 'var(--muted)' }}>3x1</span>
                 </div>
-                <div className="flex items-center gap-2 p-2 bg-yellow-50 rounded-lg border border-yellow-200">
+                <div className="flex items-center gap-2 p-2 rounded-lg border border-yellow-200" style={{ backgroundColor: 'rgba(234, 179, 8, 0.1)' }}>
                   <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span className="text-[13px] font-medium">Vitamin C 1000mg</span>
-                  <span className="text-[12px] text-gray-600">1x1</span>
+                  <span className="text-[13px] font-medium" style={{ color: 'var(--fg)' }}>Vitamin C 1000mg</span>
+                  <span className="text-[12px]" style={{ color: 'var(--muted)' }}>1x1</span>
                 </div>
               </div>
             </Field>
@@ -482,7 +494,7 @@ export default function SentraAadiDemo() {
 
         </div>
 
-          <p className="text-center text-[13px] max-w-4xl mx-auto pb-8" style={{ color: 'rgba(0,33,87,0.60)' }}>Konten dan fitur dalam versi demo ini bukan produk akhir dan dapat berubah. Demo ini hanya untuk ilustrasi.</p>
+          <p className="text-center text-[13px] max-w-4xl mx-auto pb-8" style={{ color: 'var(--muted)' }}>Konten dan fitur dalam versi demo ini bukan produk akhir dan dapat berubah. Demo ini hanya untuk ilustrasi.</p>
         </div>
       </div>
 

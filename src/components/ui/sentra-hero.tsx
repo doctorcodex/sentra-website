@@ -31,9 +31,11 @@ export default function SentraHero() {
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
-            <Button variant="secondary" size="sm" className="gap-4">
-              Powered by RSIA Melinda DHAI <MoveRight className="w-4 h-4" />
-            </Button>
+            <a href="https://melinda.co.id" target="_blank" rel="noopener noreferrer">
+              <Button variant="secondary" size="sm" className="gap-4">
+                Powered by RSIA Melinda DHAI <MoveRight className="w-4 h-4" />
+              </Button>
+            </a>
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
@@ -70,9 +72,11 @@ export default function SentraHero() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4" variant="outline">
-              Hubungi Kami <PhoneCall className="w-4 h-4" />
-            </Button>
+            <a href="https://wa.me/6285816021405" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="gap-4" variant="outline">
+                Hubungi Kami <PhoneCall className="w-4 h-4" />
+              </Button>
+            </a>
             <Button size="lg" className="gap-4">
               Mulai Sekarang <MoveRight className="w-4 h-4" />
             </Button>
