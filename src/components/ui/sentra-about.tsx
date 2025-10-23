@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export default function SentraAbout() {
   return (
-    <section className="py-16 bg-white relative z-10">
+    <section className="py-16 relative z-10" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="container mx-auto pl-0 pr-6 max-w-8xl">
 
         {/* 2 Cards Side by Side */}
@@ -24,7 +24,8 @@ export default function SentraAbout() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8"
+            className="rounded-2xl border shadow-lg p-8"
+            style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border)' }}
           >
           {/* Header */}
           <div className="flex items-center gap-6 mb-8">
@@ -47,7 +48,7 @@ export default function SentraAbout() {
             className="space-y-5"
           >
             {/* Profile Card */}
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div className="rounded-xl p-6 border" style={{ backgroundColor: 'var(--bg-alt)', borderColor: 'var(--border)' }}>
               <div className="relative w-full aspect-square rounded-lg overflow-hidden mb-4 shadow-md">
                 <Image
                   src="/images/ferdi.png"
@@ -62,12 +63,17 @@ export default function SentraAbout() {
                 <h3 className="font-bold text-lg" style={{ color: '#002157' }}>
                   dr Ferdi Iskandar
                 </h3>
-                <p className="text-sm font-medium text-gray-700">
-                  CEO & Founder SENTRA
-                </p>
-                <p className="text-xs text-gray-600 leading-relaxed pt-2 border-t border-gray-200">
-                  Berdiskusi bersama tenaga medis untuk pengembangan AADI
-                </p>
+                <div className="space-y-1">
+                  <p className="text-sm font-medium text-gray-700">
+                    CEO & Founder SENTRA
+                  </p>
+                  <p className="text-sm font-medium text-gray-700">
+                    CEO RSIA Melinda DHAI
+                  </p>
+                  <p className="text-sm font-medium text-gray-700">
+                    Civil Law Consultant (Konsultan Hukum Perdata)
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -132,7 +138,8 @@ export default function SentraAbout() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8"
+            className="rounded-2xl border shadow-lg p-8"
+            style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border)' }}
           >
             <div className="mb-6">
               <div className="flex items-center gap-4 mb-2">

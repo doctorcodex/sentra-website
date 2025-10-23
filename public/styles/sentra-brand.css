@@ -332,7 +332,20 @@ body, .card, section {
 
 /* specific overrides for common patterns */
 .theme-dark [style*="color: #002157"],
-.theme-dark [style*="color:#002157"] {
+.theme-dark [style*="color:#002157"],
+.theme-dark [style*="color: #002147"],
+.theme-dark [style*="color:#002147"] {
+  color: var(--fg) !important;
+}
+
+/* override oxford blue in all contexts */
+.theme-dark h1[style*="#002157"],
+.theme-dark h2[style*="#002157"],
+.theme-dark h3[style*="#002157"],
+.theme-dark h4[style*="#002157"],
+.theme-dark span[style*="#002157"],
+.theme-dark strong[style*="#002157"],
+.theme-dark div[style*="#002157"] {
   color: var(--fg) !important;
 }
 
@@ -356,7 +369,39 @@ body, .card, section {
 .theme-dark .shadow-sm,
 .theme-dark .shadow,
 .theme-dark .shadow-md,
-.theme-dark .shadow-lg {
+.theme-dark .shadow-lg,
+.theme-dark .shadow-2xl {
   box-shadow: var(--shadow-md);
+}
+
+/* clinical demo specific fixes */
+.theme-dark .bg-white.rounded-2xl,
+.theme-dark [style*="backgroundColor: \"white\""],
+.theme-dark [style*='backgroundColor: "white"'],
+.theme-dark [style*="backgroundColor: white"] {
+  background-color: var(--bg-alt) !important;
+}
+
+/* ensure all text colors in dark mode */
+.theme-dark .text-gray-900,
+.theme-dark .text-gray-800,
+.theme-dark .text-black {
+  color: var(--fg) !important;
+}
+
+/* borders in dark mode */
+.theme-dark .border-gray-300,
+.theme-dark .border-gray-400 {
+  border-color: var(--border) !important;
+}
+
+/* pills and badges */
+.theme-dark [style*="bg-[#002157]"] {
+  background-color: var(--accent-alt) !important;
+}
+
+.theme-dark .rounded-full[style*="#002157"] {
+  background-color: var(--accent-alt) !important;
+  color: var(--fg) !important;
 }
 
